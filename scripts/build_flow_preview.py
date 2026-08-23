@@ -337,7 +337,7 @@ def to_ascii(t):
 PAGE = to_ascii(PAGE)          # no <script> here, so entities are safe throughout
 PAGE.encode("ascii")           # hard assert
 
-out = os.path.join(ROOT, "..", "build", "flow-preview.html")
+out = os.path.join(ROOT, "build", "flow-preview.html")
 os.makedirs(os.path.dirname(out), exist_ok=True)
 open(out, "w", encoding="ascii").write(PAGE)
 print("wrote %s  (%d KB, %d screens)" % (os.path.abspath(out), len(PAGE) // 1024, len(SCREENS)))

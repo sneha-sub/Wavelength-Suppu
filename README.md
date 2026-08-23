@@ -25,23 +25,18 @@ laptop sleeps or the server restarts — fine for testing, not for the party.
 
 ## Deploy for the party
 
-1. Deploy. From this folder:
+The repo is linked to Vercel and deploys on every push to `dev`. The
+Next.js app sits at the repo root, so Vercel auto-detects it and the
+project's **Root Directory** setting must stay **empty**.
 
-       npx vercel --prod
-
-   It opens a browser to log in the first time, then uploads and gives you a
-   public URL.
-
-2. Add the database. In the Vercel dashboard, open the project →
+1. Add the database. In the Vercel dashboard, open the project →
    **Storage** → **Create Database** → **Upstash for Redis** → connect it to
    this project. Free tier is far more than enough.
 
    The app reads `KV_REST_API_URL` / `KV_REST_API_TOKEN` (what the Vercel
    integration sets) or `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN`.
 
-3. Redeploy so the app picks up the new variables:
-
-       npx vercel --prod
+2. Redeploy so the app picks up the new variables (Deployments -> ... -> Redeploy).
 
 Without a database, production returns "The game database isn't connected
 yet" rather than silently losing games mid-round.

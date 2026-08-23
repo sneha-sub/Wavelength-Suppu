@@ -5,7 +5,7 @@ node_modules/
 .env*.local
 .vercel
 
-# generated: rebuild with `python3 app/scripts/build_flow_preview.py`
+# generated: rebuild with `python3 scripts/build_flow_preview.py`
 # (also holds the superseded single-device prototype)
 build/
 
