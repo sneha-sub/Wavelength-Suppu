@@ -41,6 +41,28 @@ project's **Root Directory** setting must stay **empty**.
 Without a database, production returns "The game database isn't connected
 yet" rather than silently losing games mid-round.
 
+## Vercel setup
+
+The repo is linked to Vercel and deploys on every push to `dev`. Three
+things had to be true, and all three are now pinned in the repo rather
+than in dashboard fields:
+
+- **The app lives at the repo root.** Vercel's **Root Directory** setting
+  must stay **empty**. Putting the app in a subfolder was what made the
+  site serve `dosa.png` instead of the game.
+- **`vercel.json` declares `"framework": "nextjs"`.** Without it the
+  project fell back to the "Other" preset, whose output directory is
+  `public/` — so builds succeeded, `.next` was ignored, and `/` returned
+  404 while `/dosa.png` returned 200.
+- **`distDir` is always `.next`.** Never key it off `NODE_ENV`: Vercel
+  builds with `NODE_ENV=production`, so that sends output somewhere Vercel
+  does not look. Use `npm run build:local` for a build that keeps out of a
+  running dev server's way.
+
+Environment variables are bound when a deployment is built, so after
+connecting or changing the database you must redeploy for the app to see
+the new credentials.
+
 ## Editing the content
 
 - **Spectrums and decks** — `lib/decks.js`. Each card is `{ l, r }`: the left
