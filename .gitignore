@@ -1,0 +1,13 @@
+node_modules/
+.next/
+.next-build/
+.DS_Store
+.env*.local
+.vercel
+
+# generated: rebuild with `python3 app/scripts/build_flow_preview.py`
+# (also holds the superseded single-device prototype)
+build/
+
+# machine-specific dev-server paths
+.claude/

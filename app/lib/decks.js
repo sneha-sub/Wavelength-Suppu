@@ -1,0 +1,90 @@
+/* Every spectrum is custom-written for Suppu. Edit freely:
+   {l} is the left end of the dial, {r} the right end. */
+export const DECKS = [
+  { id: "kitchen", name: "Suppu's Kitchen", emoji: "\u{1F375}", cards: [
+    { l: "Matcha latte",      r: "Filter coffee" },
+    { l: "Bad dosa",          r: "Perfect dosa" },
+    { l: "A snack",           r: "A full meal" },
+    { l: "Team idli",         r: "Team vada" },
+    { l: "Not enough ghee",   r: "Too much ghee" },
+    { l: "Instant coffee",    r: "Third-wave cafe" },
+    { l: "Coconut chutney",   r: "Tomato chutney" },
+    { l: "Eat with hands",    r: "Needs cutlery" },
+    { l: "Overrated food",    r: "Underrated food" },
+    { l: "Comfort food",      r: "Adventurous food" },
+  ]},
+  { id: "hudson", name: "Hudson's World", emoji: "\u{1F436}", cards: [
+    { l: "Bad boy",           r: "Good boy" },
+    { l: "Hudson stays asleep", r: "Skateboard outside" },
+    { l: "Cat energy",        r: "Dog energy" },
+    { l: "Nap",               r: "Zoomies" },
+    { l: "Cute",              r: "Majestic" },
+    { l: "Smells terrible",   r: "Smells amazing" },
+    { l: "Fits in a bag",     r: "Knocks the table" },
+    { l: "In trouble",        r: "Earned a treat" },
+    { l: "Well behaved",      r: "Absolute menace" },
+    { l: "Ignores you",      r: "Velcro dog" },
+  ]},
+  { id: "lame", name: "Lame or Iconic", emoji: "\u{1F610}", cards: [
+    { l: "Naveen's joke",     r: "Actually funny" },
+    { l: "Cringe",            r: "Iconic" },
+    { l: "Sneha's fit",       r: "Suppu's fit" },
+    { l: "Basic outfit",      r: "Funky outfit" },
+    { l: "Try-hard",          r: "Effortless" },
+    { l: "Dad joke",          r: "Genuinely witty" },
+    { l: "Would delete it",   r: "Would post it" },
+    { l: "Fashion crime",     r: "Fashion statement" },
+    { l: "Too much",          r: "Not enough" },
+    { l: "Ages badly",        r: "Ages like wine" },
+    { l: "Prestige TV",       r: "Trash TV" },
+  ]},
+  { id: "organiser", name: "Certified Organiser", emoji: "\u{1F4CB}", cards: [
+    { l: "Chaos",             r: "Colour-coded" },
+    { l: "Spontaneous",       r: "Planned weeks ago" },
+    { l: "Let it slide",      r: "Make a plan for it" },
+    { l: "Nice to have",      r: "Non-negotiable" },
+    { l: "Just wing it",      r: "Build a deck for it" },
+    { l: "Group chat idea",   r: "Booked itinerary" },
+    { l: "Junior energy",     r: "Partner energy" },
+    { l: "Could be an email", r: "Needs a workshop" },
+    { l: "Always late",       r: "Always early" },
+    { l: "Low effort",        r: "High effort" },
+  ]},
+  { id: "suppu", name: "The Suppu Scale", emoji: "\u{1F382}", cards: [
+    { l: "Suppu hates it",    r: "Suppu loves it" },
+    { l: "Instant no",        r: "Instant yes" },
+    { l: "Makes her cry",     r: "Makes her laugh" },
+    { l: "Not very Suppu",    r: "Very Suppu" },
+    { l: "Suppu at 8am",      r: "Suppu at 8pm" },
+    { l: "She'd lose it",     r: "She'd laminate it" },
+    { l: "She'd complain",    r: "She'd organise it" },
+    { l: "Guilty pleasure",   r: "Proud favourite" },
+    { l: "She'd say maybe",   r: "She'd say absolutely" },
+    { l: "Suppu on deadline", r: "Suppu on holiday" },
+  ]},
+  { id: "classic", name: "Classic Wavelength", emoji: "\u{1F30D}", cards: [
+    { l: "Cold",              r: "Hot" },
+    { l: "Underrated",        r: "Overrated" },
+    { l: "Round",             r: "Pointy" },
+    { l: "Useless",           r: "Useful" },
+    { l: "Forbidden",         r: "Encouraged" },
+    { l: "Temporary",         r: "Permanent" },
+    { l: "Bad habit",         r: "Good habit" },
+    { l: "Quiet",             r: "Loud" },
+    { l: "Cheap",             r: "Expensive" },
+    { l: "Fantasy",           r: "Sci-fi" },
+  ]},
+];
+
+/* Placeholder reactions. To use custom art, give a reaction
+   `img: "/reactions/whatever.png"` instead of `emoji`. */
+export const REACTIONS = [
+  { id: "lol",   emoji: "\u{1F602}", label: "Hilarious" },
+  { id: "fire",  emoji: "\u{1F525}", label: "Fire clue" },
+  { id: "lame",  emoji: "\u{1F644}", label: "Lame" },
+  { id: "dog",   emoji: "\u{1F436}", label: "Hudson approves" },
+  { id: "kaapi", emoji: "☕",    label: "Kaapi" },
+  { id: "clap",  emoji: "\u{1F44F}", label: "Respect" },
+];
+
+export const deckById = (id) => DECKS.find((d) => d.id === id);
